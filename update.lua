@@ -3,70 +3,61 @@ function update_game()
     shipsx=0
     shipsy=0
     shipspr=2
-    
     if btn(0) then
-     shipsx=-2
-     shipspr=1
+        shipsx=-2
+        shipspr=1
     end
     if btn(1) then
-     shipsx=2
-     shipspr=3
+        shipsx=2
+        shipspr=3
     end
     if btn(2) then
-     shipsy=-2
+        shipsy=-2
     end
     if btn(3) then
-     shipsy=2
+        shipsy=2
     end
-   
     if btnp(4) then
-     mode="over"
+        mode="over"
     end
-    
     if btnp(5) then
-     bulx=shipx
-     buly=shipy-3
-     sfx(0)
-     muzzle=6
+        bulx=shipx
+        buly=shipy-3
+        sfx(0)
+        muzzle=6
     end
-    
     --moving the ship
     shipx=shipx+shipsx
     shipy=shipy+shipsy
-    
     --move the bullet
     buly=buly-4
-    
     --animate flame
     flamespr=flamespr+1
     if flamespr>9 then
-     flamespr=5
+        flamespr=5
     end
-    
     --animate mullze flash
     if muzzle>0 then
-     muzzle=muzzle-1
+        muzzle=muzzle-1
     end
-    
     --checking if we hit the edge
     if shipx>120 then
-     shipx=0
+        shipx=0
     end
     if shipx<0 then
-     shipx=120
+        shipx=120
     end
-    
     animatestars()
-   end
-   
-   function update_start()
+end
+
+function update_start()
     if btnp(4) or btnp(5) then
-     startgame()
+        startgame()
     end
-   end
-   
-   function update_over()
+end
+
+function update_over()
     if btnp(4) or btnp(5) then
-     mode="start"
+        mode="start"
     end
-   end
+end
