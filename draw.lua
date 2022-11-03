@@ -1,3 +1,4 @@
+-- draw.lua
 function draw_game()
     cls(0)
     starfield()
@@ -21,12 +22,12 @@ end
 function draw_start()
     --print(blink())
     cls(1)
-    print("my awesome shmup",34,40,12) 
+    print("my awesome shmup",34,40,12)
     print("press any key to start",20,80,blink())
 end
 
 function draw_over()
     cls(8)
-    print("game over",48,40,2) 
+    print("game over",48,40,2)
     print("press any key to continue",16,80,blink())
 end
