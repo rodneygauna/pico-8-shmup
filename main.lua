@@ -48,4 +48,13 @@ function startgame()
         add(stary,flr(rnd(128)))
         add(starspd,rnd(1.5)+0.5)
     end
+
+    stars={}
+    for i=1,100 do
+        local newstar={}
+        newstar.x=flr(rnd(128))
+        newstar.y=flr(rnd(128))
+        newstar.spd=rnd(1.5)+0.5
+        add(stars,newstar)
+    end
 end
